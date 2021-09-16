@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testingaks-1bd0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testingaks-1bd0"
+  template:
+    metadata:
+      labels:
+        app: "testingaks-1bd0"
+    spec:
+      containers:
+        - name: "testingaks-1bd0"
+          image: "cicdregisrty.azurecr.io/testingaks"
+          ports:
+          - containerPort: 80
